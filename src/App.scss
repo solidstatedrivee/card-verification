@@ -1,3 +1,21 @@
+
+//COLORS
+
+//FONTS
+@font-face {
+  font-family: 'Space Grotesk Bold';
+  src: url(../public/font/Space_Grotesk/SpaceGrotesk-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Space Grotesk Light';
+  src: url(../public/font/Space_Grotesk/SpaceGrotesk-Light.ttf);
+}
+
+$bold: 'Space Grotesk Bold', sans-serif;
+$light: 'Space Grotesk Light', sans-serif;
+
+
 .App {
   text-align: center;
 }
@@ -7,6 +25,8 @@
   pointer-events: none;
 }
 
+//MEDIA QUERIES
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,7 +34,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +42,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: $bold;
 }
 
 .App-link {
