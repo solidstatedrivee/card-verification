@@ -1,7 +1,9 @@
 import './App.scss';
+import iconComplete from './images/icon-complete.svg'
 import CardFrontComponent from './components/CardFrontComponent';
 import CardBackComponent from './components/CardBackComponent';
 import CardDetailsForm from './components/CardDetailsForm';
+import CompleteStateComponent from './components/CompleteStateComponent';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
           <CardBackComponent />
         </div>
         <div className='app-column-2'>
+          {/* TOGGLE CARDETAILSFORM AND COMPLETESTATECONTAINER TO VIEW STATES FOR NOW */}
           <CardDetailsForm />
+          {/* <CompleteStateComponent /> */}
         </div>
       </section>
     </div>

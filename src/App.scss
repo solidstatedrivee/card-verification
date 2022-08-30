@@ -209,8 +209,51 @@ $transition: all 250ms ease;
           padding-left: 30px;
         }
       }
+    }
 
+    .complete-state-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
 
+      img {
+        margin-bottom: 30px;
+      }
+
+      .thank-you {
+        font-family: $medium;
+        font-size: 3em;
+        letter-spacing: 5px;
+        //padding: 10px 0;
+        color: $very-dark-violet;
+      }
+
+      .details-confirmation {
+        font-family: $medium;
+        font-size: 1.5em;
+        //padding: 10px 0;
+        color: hsla(278, 68%, 11%, 0.5);
+      }
+
+      .continue-button {
+        width: 100%;
+        font-family: $medium;
+        font-size: 1.1em;
+        padding: 15px;
+        border: none;
+        color: $white;
+        background: $very-dark-violet;
+        border-radius: 5px;
+        margin-top: 30px;
+        cursor: pointer;
+        transition: $transition;
+      }
+
+      .continue-button:hover {
+        background: $darker-violet;
+      }
     }
   }
 }
