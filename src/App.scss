@@ -9,10 +9,6 @@ $very-dark-violet: hsl(278, 68%, 11%);
 $red: hsl(0, 90%, 61%);
 
 //FONTS
-@font-face {
-  font-family: 'Space Grotesk Bold';
-  src: url(../public/font/Space_Grotesk/SpaceGrotesk-Bold.ttf);
-}
 
 @font-face {
   font-family: 'Space Grotesk Light';
@@ -24,15 +20,6 @@ $red: hsl(0, 90%, 61%);
   src: url(../public/font/Space_Grotesk/SpaceGrotesk-Medium.ttf);
 }
 
-@font-face {
-  font-family: 'Space Grotesk Regular';
-  src: url(../public/font/Space_Grotesk/SpaceGrotesk-Regular.ttf);
-}
-
-@font-face {
-  font-family: 'Space Grotesk Semi-Bold';
-  src: url(../public/font/Space_Grotesk/SpaceGrotesk-SemiBold.ttf);
-}
 
 $bold: 'Space Grotesk Bold', sans-serif;
 $light: 'Space Grotesk Light', sans-serif;
