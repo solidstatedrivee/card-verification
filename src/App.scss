@@ -204,6 +204,13 @@ $transition: all 250ms ease;
         color: $red;
       }
 
+      .error-year {
+        position: relative;
+        left: 160px;
+        width: 30%;
+        text-align: left;
+      }
+
       .error-input {
         border: 1px solid $red;
       }

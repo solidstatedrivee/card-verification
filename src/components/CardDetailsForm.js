@@ -3,11 +3,18 @@ import { useState, useEffect } from 'react';
 
 function CardDetailsForm(props) {
 
-    const [isSubmit, setIsSubmit] = useState(false);
     const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
 
     const nameRegex = /^[a-z ,.'-]+$/i;
-    const numberRegex = /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/
+
+    //Below is a regex for validating card numbers. May not be the best practice though. 
+    //const numberRegex = /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/;
+
+    const numberRegex = /\d+/
+    const monthRegex = /^(1[0-2]|0[1-9])$/;
+    const yearRegex = /^\d{2}$/;
+    const cvcRegex = /^\d{3}$/
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,6 +27,10 @@ function CardDetailsForm(props) {
         console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             console.log(props.name);
+            console.log(props.cardNumber);
+            console.log(props.expMonth);
+            console.log(props.expYear);
+            console.log(props.cvc);
         }
     }, [formErrors])
 
@@ -29,6 +40,12 @@ function CardDetailsForm(props) {
             errors.name = 'Cardholder name should not contain numbers';
         } else if (!numberRegex.test(number)) {
             errors.number = 'Wrong format, numbers only'
+        } else if (!monthRegex.test(month)) {
+            errors.month = 'Invalid month '
+        } else if (!yearRegex.test(year)) {
+            errors.year = 'Invalid year'
+        } else if (!cvcRegex.test(cvc)) {
+            errors.cvc = 'Must be three digits'
         }
         return errors;
 
@@ -36,6 +53,8 @@ function CardDetailsForm(props) {
 
     return (
         <form onSubmit={handleSubmit} className='card-details-form'>
+            <p>{Object.keys(formErrors).length === 0 && isSubmit ? 'Submission successful!' : ''}</p>
+
             <label htmlFor="cardholder-name">Cardholder Name</label><br />
             <input
                 type="text"
@@ -75,7 +94,10 @@ function CardDetailsForm(props) {
                             onChange={(e) => props.setMonthValue(e.target.value)}
                             id='exp-month'
                             name='exp-date'
-                            placeholder='MM' />
+                            placeholder='MM'
+                            className={formErrors.month ? 'error-input' : ''}
+                        />
+
 
                         <input
                             type="text"
@@ -84,8 +106,12 @@ function CardDetailsForm(props) {
                             onChange={(e) => props.setYearValue(e.target.value)}
                             id='exp-year'
                             name='exp-date'
-                            placeholder='YY' />
+                            placeholder='YY'
+                            className={formErrors.year ? 'error-input' : ''}
+                        /><br />
                     </div>
+                    <p className='error-message'>{formErrors.month}</p>
+                    <p className='error-message error-year'>{formErrors.year}</p>
                 </div>
                 <div className='left cvc-container'>
                     <label htmlFor="">CVC</label>
@@ -96,7 +122,10 @@ function CardDetailsForm(props) {
                         onChange={(e) => props.setCvcValue(e.target.value)}
                         id='cvc'
                         name='cvc'
-                        placeholder='e.g. 000' />
+                        placeholder='e.g. 000'
+                        className={formErrors.cvc ? 'error-input' : ''} />
+                    <p className='error-message'>{formErrors.cvc}</p>
+
                 </div>
             </div>
             <div className='clear'></div>
