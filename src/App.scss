@@ -6,6 +6,7 @@ $white: hsl(0, 0%, 100%);
 $light-grayish-violet: hsl(270, 3%, 87%);
 $dark-grayish-violet: hsl(279, 6%, 55%);
 $very-dark-violet: hsl(278, 68%, 11%);
+$red: hsl(0, 90%, 61%);
 
 //FONTS
 @font-face {
@@ -128,6 +129,7 @@ $transition: all 250ms ease;
 
     .card-details-form {
       width: 50%;
+      position: relative;
 
       label {
         display: inline-block;
@@ -149,8 +151,6 @@ $transition: all 250ms ease;
         border: none;
         border: 1px solid rgba(0, 0, 0, 0.2);
         transition: $transition;
-        //padding: 10px;
-        //margin-bottom: 10px;
       }
 
       input:hover {
@@ -161,8 +161,6 @@ $transition: all 250ms ease;
         border: 1px solid $violet;
         outline: none;
       }
-
-
 
       input::placeholder {
         color: black;
@@ -209,6 +207,18 @@ $transition: all 250ms ease;
           width: 50%;
           padding-left: 30px;
         }
+      }
+
+      .error-message {
+        padding: 0;
+        margin: 0;
+        margin-top: -20px;
+        font-family: $light;
+        color: $red;
+      }
+
+      .error-input {
+        border: 1px solid $red;
       }
     }
 
