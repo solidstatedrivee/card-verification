@@ -1,5 +1,5 @@
 import '../App.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CompleteStateComponent from './CompleteStateComponent';
 
 function CardDetailsForm(props) {
@@ -21,20 +21,7 @@ function CardDetailsForm(props) {
         e.preventDefault();
         setFormErrors(validate(props.name, props.cardNumber, props.expMonth, props.expYear, props.cvc));
         setIsSubmit(true);
-        console.log(isSubmit);
     }
-
-
-    // useEffect(() => {
-    //     console.log(formErrors);
-    //     if (Object.keys(formErrors).length === 0 && isSubmit) {
-    //         console.log(props.name);
-    //         console.log(props.cardNumber);
-    //         console.log(props.expMonth);
-    //         console.log(props.expYear);
-    //         console.log(props.cvc);
-    //     }
-    // }, [formErrors])
 
     const validate = (name, number, month, year, cvc) => {
         const errors = {};
