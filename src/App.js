@@ -3,7 +3,6 @@ import { useState } from 'react';
 import CardFrontComponent from './components/CardFrontComponent';
 import CardBackComponent from './components/CardBackComponent';
 import CardDetailsForm from './components/CardDetailsForm';
-import CompleteStateComponent from './components/CompleteStateComponent';
 
 function App() {
   const [name, setName] = useState("");
@@ -49,7 +48,6 @@ function App() {
           />
         </div>
         <div className='app-column-2'>
-          {/* TOGGLE CARDETAILSFORM AND COMPLETESTATECOMPONENT TO VIEW STATES FOR NOW */}
           <CardDetailsForm
             name={name}
             setNameValue={setNameValue}
@@ -61,7 +59,6 @@ function App() {
             setYearValue={setYearValue}
             cvc={cvc} setCvcValue={setCvcValue}
           />
-          {/* <CompleteStateComponent /> */}
         </div>
       </section>
     </div>

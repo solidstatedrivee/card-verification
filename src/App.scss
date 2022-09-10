@@ -20,12 +20,8 @@ $red: hsl(0, 90%, 61%);
   src: url(../public/font/Space_Grotesk/SpaceGrotesk-Medium.ttf);
 }
 
-
-$bold: 'Space Grotesk Bold', sans-serif;
 $light: 'Space Grotesk Light', sans-serif;
 $medium: 'Space Grotesk Medium', sans-serif;
-$regular: 'Space Grotesk Regular', sans-serif;
-$semiBold: 'Space Grotesk Semi-Bold', sans-serif;
 
 //UTILITIES
 $dev-border: 1px solid red;
@@ -114,150 +110,149 @@ $transition: all 250ms ease;
     justify-content: center;
     align-items: center;
 
-    .card-details-form {
+    .card-details-container {
       width: 50%;
       position: relative;
-
-      label {
-        display: inline-block;
-        color: $very-dark-violet;
-        font-family: $medium;
-        font-size: 1em;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
-      }
-
-      input {
-        width: 100%;
-        font-family: $medium;
-        font-size: 1.5em;
-        padding: 10px;
-        margin-bottom: 30px;
-        border-radius: 10px;
-        border: none;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        transition: $transition;
-      }
-
-      input:hover {
-        border: 1px solid $very-dark-violet;
-      }
-
-      input:focus {
-        border: 1px solid $violet;
-        outline: none;
-      }
-
-      input::placeholder {
-        color: black;
-        opacity: .2;
-      }
-
-      input[type='submit'] {
-        border: none;
-        background: $very-dark-violet;
-        color: $white;
-        padding: 20px;
-        cursor: pointer;
-        transition: $transition;
-        margin-top: 30px;
-        width: 104%;
-      }
-
-      input[type='submit']:hover {
-        background: $darker-violet;
-      }
-
-      .exp-cvc-container {
-        display: flex;
-
-        .exp-date-container {
-          width: 50%;
+      .card-details-form {
+        label {
+          display: inline-block;
+          color: $very-dark-violet;
+          font-family: $medium;
+          font-size: 1em;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          margin-bottom: 10px;
+        }
   
-          .exp-input-container {
-            display: flex;
+        input {
+          width: 100%;
+          font-family: $medium;
+          font-size: 1.5em;
+          padding: 10px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+          border: none;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          transition: $transition;
+        }
   
-            #exp-month {
-              width: 50%;
-              display: inline-block;
-              margin-right: 15px;
-            }
-            #exp-year {
-              width: 50%;
-              display: inline-block;
+        input:hover {
+          border: 1px solid $very-dark-violet;
+        }
+  
+        input:focus {
+          border: 1px solid $violet;
+          outline: none;
+        }
+  
+        input::placeholder {
+          color: black;
+          opacity: .2;
+        }
+  
+        input[type='submit'] {
+          border: none;
+          background: $very-dark-violet;
+          color: $white;
+          padding: 20px;
+          cursor: pointer;
+          transition: $transition;
+          margin-top: 30px;
+          width: 104%;
+        }
+  
+        input[type='submit']:hover {
+          background: $darker-violet;
+        }
+  
+        .exp-cvc-container {
+          display: flex;
+  
+          .exp-date-container {
+            width: 50%;
+    
+            .exp-input-container {
+              display: flex;
+    
+              #exp-month {
+                width: 50%;
+                display: inline-block;
+                margin-right: 15px;
+              }
+              #exp-year {
+                width: 50%;
+                display: inline-block;
+              }
             }
           }
+  
+          .cvc-container {
+            width: 50%;
+            padding-left: 30px;
+          }
         }
-
-        .cvc-container {
-          width: 50%;
-          padding-left: 30px;
+  
+        .error-message {
+          padding: 0;
+          margin: 0;
+          margin-top: -20px;
+          font-family: $light;
+          color: $red;
+        }
+  
+        .error-year {
+          position: relative;
+          left: 160px;
+          width: 30%;
+          text-align: left;
+        }
+  
+        .error-input {
+          border: 1px solid $red;
         }
       }
 
-      .error-message {
-        padding: 0;
-        margin: 0;
-        margin-top: -20px;
-        font-family: $light;
-        color: $red;
-      }
-
-      .error-year {
-        position: relative;
-        left: 160px;
-        width: 30%;
-        text-align: left;
-      }
-
-      .error-input {
-        border: 1px solid $red;
-      }
-    }
-
-    .complete-state-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 40%;
-
-      img {
-        margin-bottom: 30px;
-      }
-
-      .thank-you {
-        font-family: $medium;
-        font-size: 3em;
-        letter-spacing: 5px;
-        //padding: 10px 0;
-        color: $very-dark-violet;
-      }
-
-      .details-confirmation {
-        font-family: $medium;
-        font-size: 1.5em;
-        //padding: 10px 0;
-        color: hsla(278, 68%, 11%, 0.5);
-      }
-
-      .continue-button {
+      .complete-state-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        font-family: $medium;
-        font-size: 1.1em;
-        padding: 15px;
-        border: none;
-        color: $white;
-        background: $very-dark-violet;
-        border-radius: 5px;
-        margin-top: 30px;
-        cursor: pointer;
-        transition: $transition;
-      }
-
-      .continue-button:hover {
-        background: $darker-violet;
+  
+        img {
+          margin-bottom: 30px;
+        }
+  
+        .thank-you {
+          font-family: $medium;
+          font-size: 3em;
+          letter-spacing: 5px;
+          color: $very-dark-violet;
+        }
+  
+        .details-confirmation {
+          font-family: $medium;
+          font-size: 1.5em;
+          color: hsla(278, 68%, 11%, 0.5);
+        }
+  
+        .continue-button {
+          width: 100%;
+          font-family: $medium;
+          font-size: 1.1em;
+          padding: 15px;
+          border: none;
+          color: $white;
+          background: $very-dark-violet;
+          border-radius: 5px;
+          margin-top: 30px;
+          cursor: pointer;
+          transition: $transition;
+        }
+  
+        .continue-button:hover {
+          background: $darker-violet;
+        }
       }
     }
   }

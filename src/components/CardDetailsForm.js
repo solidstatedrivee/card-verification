@@ -1,5 +1,6 @@
 import '../App.scss';
 import { useState, useEffect } from 'react';
+import CompleteStateComponent from './CompleteStateComponent';
 
 function CardDetailsForm(props) {
 
@@ -52,87 +53,89 @@ function CardDetailsForm(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className='card-details-form'>
-            <p>{Object.keys(formErrors).length === 0 && isSubmit ? 'Submission successful!' : ''}</p>
+        <div className='card-details-container'>
+            {Object.keys(formErrors).length === 0 && isSubmit ? <CompleteStateComponent />
+                : <form onSubmit={handleSubmit} className='card-details-form'>
+                    <p>{Object.keys(formErrors).length === 0 && isSubmit ? 'Submission successful!' : ''}</p>
 
-            <label htmlFor="cardholder-name">Cardholder Name</label><br />
-            <input
-                type="text"
-                required
-                value={props.name}
-                onChange={(e) => props.setNameValue(e.target.value)}
-                id='cardholder-name'
-                name='cardholder-name'
-                placeholder='e.g. Jane Appleseed'
-                className={formErrors.name ? 'error-input' : ''}
-            />
-            <p className='error-message'>{formErrors.name}</p>
-            <br />
-
-            <label htmlFor="card-number">Card Number</label><br />
-            <input
-                type="text"
-                required
-                value={props.cardNumber}
-                onChange={(e) => props.setCardValue(e.target.value)}
-                id='card-number'
-                name='card-number'
-                placeholder='e.g. 0000 0000 0000 0000'
-                className={formErrors.number ? 'error-input' : ''}
-            />
-            <p className='error-message'>{formErrors.number}</p>
-            <br />
-
-            <div className='exp-cvc-container'>
-                <div className='left exp-date-container'>
-                    <label htmlFor="exp-date">Exp. Date (MM/YY)</label><br />
-                    <div className='exp-input-container'>
-                        <input
-                            type="text"
-                            required
-                            value={props.expMonth}
-                            onChange={(e) => props.setMonthValue(e.target.value)}
-                            id='exp-month'
-                            name='exp-date'
-                            placeholder='MM'
-                            className={formErrors.month ? 'error-input' : ''}
-                        />
-
-
-                        <input
-                            type="text"
-                            required
-                            value={props.expYear}
-                            onChange={(e) => props.setYearValue(e.target.value)}
-                            id='exp-year'
-                            name='exp-date'
-                            placeholder='YY'
-                            className={formErrors.year ? 'error-input' : ''}
-                        /><br />
-                    </div>
-                    <p className='error-message'>{formErrors.month}</p>
-                    <p className='error-message error-year'>{formErrors.year}</p>
-                </div>
-                <div className='left cvc-container'>
-                    <label htmlFor="">CVC</label>
+                    <label htmlFor="cardholder-name">Cardholder Name</label><br />
                     <input
                         type="text"
                         required
-                        value={props.cvc}
-                        onChange={(e) => props.setCvcValue(e.target.value)}
-                        id='cvc'
-                        name='cvc'
-                        placeholder='e.g. 000'
-                        className={formErrors.cvc ? 'error-input' : ''} />
-                    <p className='error-message'>{formErrors.cvc}</p>
+                        value={props.name}
+                        onChange={(e) => props.setNameValue(e.target.value)}
+                        id='cardholder-name'
+                        name='cardholder-name'
+                        placeholder='e.g. Jane Appleseed'
+                        className={formErrors.name ? 'error-input' : ''}
+                    />
+                    <p className='error-message'>{formErrors.name}</p>
+                    <br />
 
-                </div>
-            </div>
-            <div className='clear'></div>
-            <input
-                type="submit"
-                value='Confirm' />
-        </form>
+                    <label htmlFor="card-number">Card Number</label><br />
+                    <input
+                        type="text"
+                        required
+                        value={props.cardNumber}
+                        onChange={(e) => props.setCardValue(e.target.value)}
+                        id='card-number'
+                        name='card-number'
+                        placeholder='e.g. 0000 0000 0000 0000'
+                        className={formErrors.number ? 'error-input' : ''}
+                    />
+                    <p className='error-message'>{formErrors.number}</p>
+                    <br />
+
+                    <div className='exp-cvc-container'>
+                        <div className='left exp-date-container'>
+                            <label htmlFor="exp-date">Exp. Date (MM/YY)</label><br />
+                            <div className='exp-input-container'>
+                                <input
+                                    type="text"
+                                    required
+                                    value={props.expMonth}
+                                    onChange={(e) => props.setMonthValue(e.target.value)}
+                                    id='exp-month'
+                                    name='exp-date'
+                                    placeholder='MM'
+                                    className={formErrors.month ? 'error-input' : ''}
+                                />
+
+                                <input
+                                    type="text"
+                                    required
+                                    value={props.expYear}
+                                    onChange={(e) => props.setYearValue(e.target.value)}
+                                    id='exp-year'
+                                    name='exp-date'
+                                    placeholder='YY'
+                                    className={formErrors.year ? 'error-input' : ''}
+                                /><br />
+                            </div>
+                            <p className='error-message'>{formErrors.month}</p>
+                            <p className='error-message error-year'>{formErrors.year}</p>
+                        </div>
+                        <div className='left cvc-container'>
+                            <label htmlFor="">CVC</label>
+                            <input
+                                type="text"
+                                required
+                                value={props.cvc}
+                                onChange={(e) => props.setCvcValue(e.target.value)}
+                                id='cvc'
+                                name='cvc'
+                                placeholder='e.g. 000'
+                                className={formErrors.cvc ? 'error-input' : ''} />
+                            <p className='error-message'>{formErrors.cvc}</p>
+
+                        </div>
+                    </div>
+                    <div className='clear'></div>
+                    <input
+                        type="submit"
+                        value='Confirm' />
+                </form>}
+        </div>
     )
 }
 
