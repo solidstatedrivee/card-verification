@@ -3,6 +3,7 @@ import cardFront from '../images/bg-card-front.png'
 import cardLogo from '../images/card-logo.svg'
 
 function CardFrontComponent(props) {
+
   return (
     <div className='card-front-container'>
       <img src={cardFront} className='card-front' alt="Image of the front of a credit card" />

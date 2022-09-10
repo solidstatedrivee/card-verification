@@ -24,16 +24,17 @@ function CardDetailsForm(props) {
         console.log(isSubmit);
     }
 
-    useEffect(() => {
-        console.log(formErrors);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(props.name);
-            console.log(props.cardNumber);
-            console.log(props.expMonth);
-            console.log(props.expYear);
-            console.log(props.cvc);
-        }
-    }, [formErrors])
+
+    // useEffect(() => {
+    //     console.log(formErrors);
+    //     if (Object.keys(formErrors).length === 0 && isSubmit) {
+    //         console.log(props.name);
+    //         console.log(props.cardNumber);
+    //         console.log(props.expMonth);
+    //         console.log(props.expYear);
+    //         console.log(props.cvc);
+    //     }
+    // }, [formErrors])
 
     const validate = (name, number, month, year, cvc) => {
         const errors = {};
@@ -54,7 +55,7 @@ function CardDetailsForm(props) {
 
     return (
         <div className='card-details-container'>
-            {Object.keys(formErrors).length === 0 && isSubmit ? <CompleteStateComponent />
+            {Object.keys(formErrors).length === 0 && isSubmit ? <CompleteStateComponent setIsSubmit={setIsSubmit} />
                 : <form onSubmit={handleSubmit} className='card-details-form'>
                     <p>{Object.keys(formErrors).length === 0 && isSubmit ? 'Submission successful!' : ''}</p>
 
