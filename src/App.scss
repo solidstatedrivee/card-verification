@@ -29,6 +29,10 @@ $transition: all 250ms ease;
 
 //STYLE RULES
 
+* {
+  box-sizing: border-box;
+}
+
 .app-container {
   height: 100vh;
   background: $white;
@@ -151,14 +155,15 @@ $transition: all 250ms ease;
         }
   
         input[type='submit'] {
-          border: none;
+          //border: none;
           background: $very-dark-violet;
           color: $white;
           padding: 20px;
           cursor: pointer;
           transition: $transition;
           margin-top: 30px;
-          width: 104%;
+          width: 100%;
+          border-radius: 10px;
         }
   
         input[type='submit']:hover {
@@ -252,6 +257,156 @@ $transition: all 250ms ease;
   
         .continue-button:hover {
           background: $darker-violet;
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERIES
+@media only screen and (max-width: 1700px) {
+  .app-container {
+    .app-column-2 {
+      .card-details-container {
+        left: 10%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .app-container {
+    .app-column-2 {
+      .card-details-container {
+        left: 15%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .app-container {
+    flex-direction: column;
+
+    .app-column-1 {
+      .card-front-container {
+        //width: 35%;
+        left: 20%;
+        //transform: translateX(-50%);
+        top: 35%;
+        z-index: 100;
+        .card-front {
+          width: 100%;
+        }
+      }
+
+      .card-back-container {
+        left: 80%;
+        transform: translateX(-100%);
+        top: 10%;
+        width: 447px;
+
+        .card-back {
+          width: 100%;
+        }
+      }
+    }
+    .app-column-2 {
+      .card-details-container {
+        left: 0;
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .app-container {
+    .app-column-1 {
+      .card-front-container {
+        width: 375px;
+        top: 50%;
+        .card-number {
+          font-size: 1.5em;
+        }
+      }
+      .card-back-container {
+        top: 15%;
+        width: 375px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .app-container {
+    .app-column-1 {
+      .card-front-container {
+        width: 375px;
+        top: 50%;
+        left: 10%;
+        .card-number {
+          font-size: 1.5em;
+        }
+      }
+      .card-back-container {
+        top: 15%;
+        width: 375px;
+        left: 90%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app-container {
+    .app-column-1 {
+      .card-front-container {
+        width: 375px;
+        top: 50%;
+        left: 5%;
+        .card-number {
+          font-size: 1.5em;
+        }
+      }
+      .card-back-container {
+        top: 15%;
+        width: 375px;
+        left: 95%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .app-container {
+    .app-column-1 {
+      .card-front-container {
+        width: 325px;
+        top: 45%;
+        left: 5%;
+        .card-number {
+          font-size: 1.5em;
+        }
+      }
+      .card-back-container {
+        top: 5%;
+        width: 325px;
+        left: 95%;
+      }
+    }
+
+    .app-column-2 {
+      .card-details-container {
+        margin-top: 25px;
+        .card-details-form {
+          label {
+            font-size: .75em;
+          }
+
+          input {
+            font-size: 1em;
+          }
         }
       }
     }
