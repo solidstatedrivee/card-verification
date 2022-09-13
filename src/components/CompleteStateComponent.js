@@ -3,6 +3,8 @@ import iconComplete from '../images/icon-complete.svg'
 
 function CompleteStateComponent(props) {
 
+    //When the 'Continue' button is clicked, set isSubmit to false so the conditional in CarddDetailsForm (line 52)
+    //displays the form again
     const handleClick = () => {
         props.setIsSubmit(false);
     }

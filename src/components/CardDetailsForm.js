@@ -4,9 +4,11 @@ import CompleteStateComponent from './CompleteStateComponent';
 
 function CardDetailsForm(props) {
 
+    //Track form error messages and whether the submit button is clicked
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
+    //Use regular expressions as a way to validate the format of inputs
     const nameRegex = /^[a-z ,.'-]+$/i;
 
     //Below is a regex for validating card numbers. May not be the best practice though. 
@@ -17,12 +19,17 @@ function CardDetailsForm(props) {
     const yearRegex = /^\d{2}$/;
     const cvcRegex = /^\d{3}$/
 
+    //When submit is clicked:
+    // - Prevent default browser behavior
+    // - Validate all inputs with custom function
+    // - Set isSubmit to true. When isSubmit is true and all inputs pass validation the form is submitted.
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(props.name, props.cardNumber, props.expMonth, props.expYear, props.cvc));
         setIsSubmit(true);
     }
 
+    //Validate the inputs against a regex and if they fail return the error value to an object
     const validate = (name, number, month, year, cvc) => {
         const errors = {};
         if (!nameRegex.test(name)) {
@@ -42,6 +49,7 @@ function CardDetailsForm(props) {
 
     return (
         <div className='card-details-container'>
+            {/* If the form error object is emppty and the submit button is clicked, display the success component */}
             {Object.keys(formErrors).length === 0 && isSubmit ? <CompleteStateComponent setIsSubmit={setIsSubmit} />
                 : <form onSubmit={handleSubmit} className='card-details-form'>
                     <p>{Object.keys(formErrors).length === 0 && isSubmit ? 'Submission successful!' : ''}</p>

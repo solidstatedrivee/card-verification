@@ -5,12 +5,15 @@ import CardBackComponent from './components/CardBackComponent';
 import CardDetailsForm from './components/CardDetailsForm';
 
 function App() {
+  //Track states of all card input fields
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState('');
   const [expMonth, setExpMonth] = useState('');
   const [expYear, setExpYear] = useState('');
   const [cvc, setCvc] = useState('');
 
+  //We are doing this in the parent, App.js, because these states need to go to three different child components
+  //CardDetailsForm, CardFrontComponent, and CardBackComponent
   const setNameValue = (value) => {
     setName(value);
   }
