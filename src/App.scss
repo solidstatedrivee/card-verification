@@ -164,6 +164,7 @@ $transition: all 250ms ease;
           margin-top: 30px;
           width: 100%;
           border-radius: 10px;
+          -webkit-appearance: none;
         }
   
         input[type='submit']:hover {
@@ -393,6 +394,10 @@ $transition: all 250ms ease;
         top: 5%;
         width: 325px;
         left: 95%;
+
+        .cvc {
+          bottom: 46%;
+        }
       }
     }
 
@@ -407,8 +412,29 @@ $transition: all 250ms ease;
           input {
             font-size: 1em;
           }
+
+          .error-year {
+            width: 50%;
+            left: 105px;
+          }
+        }
+
+        .complete-state-container {
+          .thank-you {
+            font-size: 2em;
+          }
+
+          .details-confirmation {
+            font-size: 1em;
+          }
+
+          img {
+            margin-bottom: 0;
+          }
         }
       }
     }
+
+
   }
 }
