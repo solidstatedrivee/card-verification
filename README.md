@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Screen Recording
 
-![](./src/images/React%20App%20%E2%80%94%20Mozilla%20Firefox%202022-09-12%2020-53-50.mp4)
+![](https://raw.githubusercontent.com/solidstatedrivee/card-verification/master/src/images/React%20App%20%E2%80%94%20Mozilla%20Firefox%202022-09-12%2020-53-50.mp4)
 
 ### Links
 
