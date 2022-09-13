@@ -28,7 +28,7 @@ Users should be able to:
 - View the optimal layout depending on their device's screen size
 - See hover, active, and focus states for interactive elements on the page
 
-### Screen Recording
+### Screen recording
 
 [View recording](https://raw.githubusercontent.com/solidstatedrivee/card-verification/master/src/images/React%20App%20%E2%80%94%20Mozilla%20Firefox%202022-09-12%2020-53-50.mp4)
 
