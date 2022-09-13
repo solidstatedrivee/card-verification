@@ -6,7 +6,7 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screen Recording](#screen-recording)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
