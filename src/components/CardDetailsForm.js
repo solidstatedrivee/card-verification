@@ -130,7 +130,7 @@ function CardDetailsForm(props) {
                     <div className='clear'></div>
                     <input
                         type="submit"
-                        value='Confirm' />
+                        value='Confirmmm' />
                 </form>}
         </div>
     )
