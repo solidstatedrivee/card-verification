@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Coming soon!](https://github.com/solidstatedrivee/card-verification/)
+- Live Site URL: [Check it out!](https://card-verification-f2048.web.app/)
 
 ## My process
 
